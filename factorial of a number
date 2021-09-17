@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int fac(int);
+int main(){
+	
+	int n = 5;
+	int res =  fac(n);
+	printf("fac of a number %d", res);
+	return 0;
+}
+
+int fac(int n){
+	if(n == 1){
+		return 1;
+	}
+	
+	return n*fac(n-1);
+}
