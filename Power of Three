@@ -1,0 +1,27 @@
+class Solution {
+public:
+    
+    bool helper(int n, long long count = 0, long long res = 0){
+        if(n == res){
+            return true;
+        }
+        
+        else if(n < res){
+            return false;
+        }
+        
+        res = pow(3, count);
+        count++;
+        
+        return helper(n, count, res);
+    }
+    bool isPowerOfThree(int n) {
+        if(n == 0){
+            return false;
+            
+        }
+        
+        bool ans = helper(n);
+        return ans;
+    }
+};
