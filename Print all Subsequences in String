@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void sub_set(string ip, string op){
+	if(ip.length() == 0){
+		cout<<op<<" ";
+		return ;
+	}
+	
+	string op1 = op;
+	string op2 = op;
+	op2.push_back(ip[0]);
+	ip.erase(ip.begin()+0);
+	sub_set(ip, op1);
+	sub_set(ip, op2);
+}
+
+int main() {
+	// your code goes here
+	sub_set("yash", "");
+	return 0;
+}
