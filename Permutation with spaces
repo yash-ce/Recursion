@@ -1,0 +1,31 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void helper(string ip, string op){
+	if(ip == ""){
+		cout<<op<<"\n";
+		return;
+	}
+	
+	string op1 = op;
+	string op2 = op;
+	op1.push_back('_');
+	op1.push_back(ip[0]);
+	op2.push_back(ip[0]);
+	ip.erase(ip.begin()+0);
+	helper(ip, op1);
+	helper(ip, op2);
+	
+}
+int main() {
+	// your code goes here
+	
+	string ip = "ABC";
+	string op = "";
+	op.push_back(ip[0]);
+	ip.erase(ip.begin()+0);
+	helper(ip, op);
+	return 0;
+}
